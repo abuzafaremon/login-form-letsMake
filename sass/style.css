@@ -20,27 +20,51 @@ body main .wrapper {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  body main .wrapper {
+    flex-direction: column;
+  }
+}
 body main .wrapper .left {
   background-color: #fff;
   width: 100%;
+  order: 1;
+}
+@media screen and (max-width: 767px) {
+  body main .wrapper .left {
+    order: 2;
+    padding-top: 10px;
+  }
 }
 body main .wrapper .left .container {
   max-width: 370px;
   width: 96%;
   margin: 0 auto;
 }
-body main .wrapper .left .container .title {
+body main .wrapper .left .container .head {
+  margin-bottom: 30px;
+}
+body main .wrapper .left .container .head .title {
   color: #101728;
   margin-bottom: 10px;
 }
-body main .wrapper .left .container .desc {
+@media screen and (max-width: 767px) {
+  body main .wrapper .left .container .head .title {
+    text-align: center;
+  }
+}
+body main .wrapper .left .container .head .desc {
   color: #616b80;
-  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  body main .wrapper .left .container .head .desc {
+    text-align: center;
+  }
 }
 body main .wrapper .left .container form .form-group {
   display: grid;
   gap: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 body main .wrapper .left .container form .form-group label {
   text-align: left;
@@ -53,7 +77,7 @@ body main .wrapper .left .container form .form-group input {
   border: 1px solid #bac5dc;
 }
 body main .wrapper .left .container form .alert {
-  margin-bottom: 20px;
+  margin: 20px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -71,6 +95,7 @@ body main .wrapper .left .container form .btn {
   outline: none;
   border-radius: 5px;
   padding: 7px;
+  cursor: pointer;
 }
 body main .wrapper .left .container form .submit-btn {
   border: none;
@@ -88,6 +113,10 @@ body main .wrapper .left .container form .google-btn {
   margin-bottom: 30px;
   border: 1px solid #bac5dc;
 }
+body main .wrapper .left .container form .google-btn:hover {
+  background-color: #7F56DA;
+  color: #fff;
+}
 body main .wrapper .left .container form .google-btn img {
   width: 15px;
 }
@@ -96,10 +125,17 @@ body main .wrapper .left .container form .no-account {
   color: #616b80;
 }
 body main .wrapper .right {
-  background-color: #F3F4F8;
   width: 100%;
+  min-height: 150px;
   height: 100%;
   position: relative;
+  order: 2;
+}
+@media screen and (max-width: 767px) {
+  body main .wrapper .right {
+    background-color: transparent;
+    order: 1 !important;
+  }
 }
 body main .wrapper .right .container .circle {
   width: 100px;
@@ -112,7 +148,7 @@ body main .wrapper .right .container .circle {
   transform: translate(-50%, -50%);
 }
 body main .wrapper .right .container .blur {
-  height: 45vh;
+  height: 50%;
   position: absolute;
   bottom: 0;
   width: 100%;
